@@ -2,7 +2,18 @@
 .container{
 	display: grid;
 	grid-template-columns: 50% auto;	
+	grid-template-rows: auto;
+	grid-template-areas:
+	"head-form head-list"
+	"cont-form cont-list"
+	;
+
 }
+
+.head-form{grid-area: head-form}
+.cont-form{grid-area: cont-form} 
+.head-list{grid-area: head-list}
+.cont-list{grid-area: cont-list}
 
 .col{
 	padding: .4em 1.3em;
@@ -42,11 +53,19 @@ input.btn{
 
 @media screen and (max-width: 600px) {
 	
-.container{
+	.container{
 		display: grid;
 		grid-template-columns: 100%;	
-		.inner-container{
+		grid-template-rows: auto;
+		grid-template-areas:
+		"head-form"
+		"cont-form"
+		"head-list"
+		"cont-list"
+		;
+		.head-list{
 			margin-top: 1em
 		}
-	}	
+	}
+
 }

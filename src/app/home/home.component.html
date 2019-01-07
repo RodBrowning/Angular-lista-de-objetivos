@@ -1,27 +1,21 @@
-<div class="container">
-	<div class="inner-container color-light">	
-		<div class="col color-dark">
-			<p>Adicione itens a lista de objetivos</p>
-		</div>
-		<div class="col">
-			<p class="sm">Use o formulario para listar seus objetivos</p>
-			<form action="">
-				<input type="text" class="txt" name="item" placeholder="Objetivos de vida" [(ngModel)]="goalTxt">
-				<input type="submit" class="btn" [value]="btnTxt" (click)="addItem()">
-			</form>
-
-		</div>
+<div class="container">	
+	<div class="head-form col color-dark">
+		<p>Adicione itens a lista de objetivos</p>
 	</div>
+	<div class="cont-form col color-light">
+		<p class="sm">Use o formulario para listar seus objetivos</p>
+		<form action="">
+			<input type="text" class="txt" name="item" placeholder="Objetivos de vida" [(ngModel)]="goalTxt">
+			<input type="submit" class="btn" [value]="btnTxt" (click)="addItem()">
+		</form>	
+    </div>
 
-	<div class="inner-container color-light">
-		<div class="col color-dark">
-			<p>Sua lista de objetivos ({{ itensCount }})</p>
-		</div>
-		<div class="col" [@goals]="goals.length">
-			<p class="life-container" *ngFor="let goal of goals; let i = index" (click)="removeItem(i)">
-				{{goal}}
-			</p>
-		</div>
+	<div class="head-list col color-dark">
+		<p>Sua lista de objetivos ({{ itensCount }})</p>
 	</div>
-
+	<div class="cont-list col color-light" [@goals]="goals.length">
+		<p class="life-container" *ngFor="let goal of goals; let i = index" (click)="removeItem(i)">
+			{{goal}}
+		</p>
+	</div>
 </div>
